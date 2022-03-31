@@ -4,7 +4,10 @@ html {
     font-family: 'Noto Sans', sans-serif;
     overflow-x: hidden;
 }
-
+* {
+    margin: 0;
+    padding: 0;
+}
 .lineHeader {
     position: relative;
     top: 50px;
@@ -15,6 +18,7 @@ html {
     position: relative;
     border-top: solid black 2px;
     top: 30px;
+  
 }
 #nav li {
     list-style: none;
@@ -86,8 +90,8 @@ html {
     padding: 20px 10px;
     height: 29px;
     border-bottom: 2px solid black;
-    left: -10px;
-
+    /* left: -10px; */
+    
   }
   
   /* Style the header links */
