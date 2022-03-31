@@ -3,6 +3,17 @@
 html {
     font-family: 'Noto Sans', sans-serif;
 }
+
+.lineHeader {
+    position: relative;
+    top: 50px;
+    border-bottom: solid black 2px;
+}
+.lineFooter {
+    position: relative;
+    border-top: solid black 2px;
+    top: 30px;
+}
 #nav li {
     list-style: none;
     float: left;
@@ -15,13 +26,13 @@ html {
 .logo {
     position: relative;
     width: 100px;
-    top: -30px;
+    top: -25px;
 }
 
 #nav a {
     position: relative;
     padding: 20px;
-    top: 20px;
+    top: 15px;
 }
 #nav a:hover {
     position: relative;
@@ -39,7 +50,6 @@ html {
 
 .pfp {
     float: right;
-    margin-top: 10px;
 }
 .user {
     position: relative;
@@ -49,7 +59,7 @@ html {
 .footer a{
     text-decoration: none;
      align-content: left;
-      color: darkgray;
+      color: black;
       font-family: 'Noto Sans', sans-serif;
   }
   .footer {
@@ -65,5 +75,8 @@ html {
     float: left;
     margin: 20px;
   }
-  
+  .footer a:hover {
+    position: relative;
+    color: #48CAE4;
+}
   

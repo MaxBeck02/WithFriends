@@ -3,7 +3,7 @@
 .footer a{
   text-decoration: none;
    align-content: left;
-    color: darkgray;
+    color: black;
     font-family: 'Noto Sans', sans-serif;
 }
 .footer {
@@ -19,4 +19,12 @@
   float: left;
   margin: 20px;
 }
-
+.footer a:hover {
+  position: relative;
+  color: #48CAE4;
+}
+.lineFooter {
+  position: relative;
+  border-top: solid black 2px;
+  top: 30px;
+}
