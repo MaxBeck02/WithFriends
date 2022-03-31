@@ -10,14 +10,15 @@
 <body>
     <div id="box1">
         <break>
+
         <h3>Email adress</h3>
-            <p>Change email address</p>
+            <input name="Change email address" placeholder="Change email address" maxlength="100" size="30">
 
         <h3>Phone number</h3>
-            <p>Change phone number</p>
+            <input name="Change phone number" placeholder="Change phone number" maxlength="100" size="30">
 
         <h3>Password</h3>
-            <p>Change password</p>
+            <input name="Change password" placeholder="Change password" maxlength="100" size="30">
 
         <h4>Enable two-factor authentication</h4>
         <h4>Change user profile picture</h4>
@@ -26,7 +27,6 @@
             <button> Disable account</button>
             <button> Delete Account</button>
         </div>
-
 </div> 
 </body>
 </html>
