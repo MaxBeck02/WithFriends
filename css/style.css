@@ -10,7 +10,6 @@ html {
     top: 50px;
     border-bottom: solid black 2px;
     width: 2000px;
-    left: -10px;
 }
 .lineFooter {
     position: relative;
@@ -37,9 +36,8 @@ html {
     padding: 20px;
     top: 15px;
 }
-#nav a:hover {
-    position: relative;
-    padding: 20px;
+.header a:hover {
+    position: relative;;
     color: #48CAE4;
 }
 
@@ -53,12 +51,7 @@ html {
 .pfp {
     float: right;
 }
-.user {
-    position: relative;
-    float: right;
-    right: 50px;
-  
-}
+
 
 .footer a{
     text-decoration: none;
@@ -84,3 +77,57 @@ html {
     color: #48CAE4;
 }
   
+
+
+/* Style the header with a grey background and some padding */
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 10px;
+    height: 29px;
+    border-bottom: 2px solid black;
+    left: -10px;
+
+  }
+  
+  /* Style the header links */
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+
+  
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+
+  .header-left {
+      float: left;
+  }
+  /* Float the link section to the right */
+  .header-right {
+    float: right;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */ 
+  @media screen and (max-width: 500px) {
+    .header-left {
+        display: none;
+    }
+  }
