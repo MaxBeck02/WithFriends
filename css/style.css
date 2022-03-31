@@ -27,9 +27,43 @@ html {
     position: relative;
     padding: 20px;
     top: 20px;
-    color: blue;
+    color: #48CAE4;
 }
 
-.slash:hover {
-    color: none;
+.circle {
+    border-radius: 50%;
+    border: solid black 2px;
+    width: 50px;
+    object-position: 0px 5px;
 }
+
+.pfp {
+    float: right;
+    margin-top: 10px;
+}
+.user {
+    position: relative;
+    left: 750px;
+}
+
+.footer a{
+    text-decoration: none;
+     align-content: left;
+      color: darkgray;
+      font-family: 'Noto Sans', sans-serif;
+  }
+  .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color:  white;
+     text-align: left;
+  }
+  .footer li{
+    list-style: none;
+    float: left;
+    margin: 20px;
+  }
+  
+  

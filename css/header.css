@@ -1,0 +1,47 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+html {
+    font-family: 'Noto Sans', sans-serif;
+}
+#nav li {
+    list-style: none;
+    float: left;
+    
+}
+#nav ul {
+    list-style: none;
+}
+
+.logo {
+    position: relative;
+    width: 100px;
+    top: -30px;
+}
+
+#nav a {
+    position: relative;
+    padding: 20px;
+    top: 20px;
+}
+#nav a:hover {
+    position: relative;
+    padding: 20px;
+    top: 20px;
+    color: #48CAE4;
+}
+
+.circle {
+    border-radius: 50%;
+    border: solid black 2px;
+    width: 50px;
+    object-position: 0px 5px;
+}
+
+.pfp {
+    float: right;
+    margin-top: 10px;
+}
+.user {
+    position: relative;
+    left: 750px;
+}
