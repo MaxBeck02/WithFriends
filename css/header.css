@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 html {
     font-family: 'Noto Sans', sans-serif;
+    overflow-x: hidden;
 }
 #nav li {
     list-style: none;
@@ -45,8 +46,11 @@ html {
     position: relative;
     left: 750px;
 }
+
 .lineHeader {
     position: relative;
     top: 50px;
     border-bottom: solid black 2px;
+    width: 2000px;
+    left: -10px;
 }
