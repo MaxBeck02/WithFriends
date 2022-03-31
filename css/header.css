@@ -4,27 +4,13 @@ html {
     font-family: 'Noto Sans', sans-serif;
     overflow-x: hidden;
 }
-#nav li {
-    list-style: none;
-    float: left;
-    
-}
-#nav ul {
-    list-style: none;
-}
-
 .logo {
     position: relative;
     width: 100px;
     top: -30px;
 }
 
-#nav a {
-    position: relative;
-    padding: 20px;
-    top: 20px;
-}
-#nav a:hover {
+.header a:hover {
     position: relative;
     padding: 20px;
     top: 20px;
@@ -40,17 +26,50 @@ html {
 
 .pfp {
     float: right;
-    margin-top: 10px;
-}
-.user {
-    position: relative;
-    left: 750px;
 }
 
-.lineHeader {
+.header {
     position: relative;
-    top: 50px;
-    border-bottom: solid black 2px;
-    width: 2000px;
-    left: -10px;
-}
+    overflow: hidden;
+    padding: 20px 10px;
+    height: 29px;
+    border-bottom: 2px solid black;
+    /* left: -10px; */
+    
+  }
+  
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+
+  .header-left {
+      float: left;
+  }
+  
+  .header-right {
+    float: right;
+  }
+  
+ 
+  @media screen and (max-width: 500px) {
+    .header-left {
+        display: none;
+    }
+  }
