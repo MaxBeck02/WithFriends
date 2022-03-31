@@ -20,8 +20,8 @@
         <h3>Password</h3>
             <input name="Change password" placeholder="Change password" maxlength="100" size="30">
 
-        <h4>Enable two-factor authentication</h4>
-        <h4>Change user profile picture</h4>
+        <h5>Enable two-factor authentication</h5>
+        <h5>Change user profile picture</h5>
 
         <div id="buttons">
             <button> Disable account</button>
