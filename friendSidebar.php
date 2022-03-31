@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <style>
-main{
-    background-color: #CAF0f8;
-}
 nav {
 background-color: #CAF0f8;
 height: 8%;
 }
-
+aside {
+    float: right;
+    background-color: #CAF0f8;
+    height: 400px;
+    width: 200px;
+}
 p1{
     font-size: 18px;
 }
@@ -25,8 +27,6 @@ p2{
 .dropdown {
   position: relative;
   display: inline-block;
-  left: 50%;
-  margin-right: -50%;
 }
 
 .dropdown-content {
@@ -60,7 +60,7 @@ p2{
 }
 .friendList:active {
     position:relative;
-	  top:1px;
+	top:1px;
 }
 
 .friendSearch {
@@ -86,39 +86,54 @@ float: left;
     <h1>NAV</h1>
 </nav>
 <body>
+<?php
+require_once 'friends.php';
+
+
+$postIns = new User();
+// [{'id' => 1, 'title' => 'nfeubeu'}]
+// foreach($postIns->getUser() as $user){
+//   echo $user->friendCode . "<br>";
+//   echo $user->name;
+// }
+// ?>
 </body>
-<main>
+<aside>
     <!-- Main Focus Managing Friends Sidebar -->
     <h1>Friends</h1>
-    <p1>List</p1><br>
-    <div class="dropdown">
-        <button class="dropbtn">Friend 1</button>
+    <p1>List</p1>
+    <div class="dropdown" style="float:right;">
+        <button class="dropbtn"><?php foreach($postIns->getFriend('123456') as $user){
+  echo $user->name;
+}?></button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
-    </div></br></br>
-    <div class="dropdown">
+    </div>
+    <div class="dropdown" style="float:right;">
         <button class="dropbtn">Friend 2</button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
-    </div></br></br>
-    <div class="dropdown">
+    </div>
+    <div class="dropdown" style="float:right;">
         <button class="dropbtn">Friend 3</button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
-    </div></br></br>
-    <div class="dropdown">
+    </div>
+    <div class="dropdown" style="float:right;">
         <button class="dropbtn">Friend 4</button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
-    </div></br></br>
+    </div></br>
     <p1>Add</p1><br>
-    <p2>Friend Code: [Friend code]</p2><br> <!-- Friend Code Should Be Pre-Generated On Account Creation? -->
+    <p2>Friend Code: <?php foreach($postIns->getCode() as $user){
+  echo $user->friendCode;
+}?></p2><br> <!-- Friend Code Should Be Pre-Generated On Account Creation? -->
     <input class="friendSearch"type="text" placeholder="Search For Friends...">
-    <br></br>
+    <br>
     <button class="submitButton">Submit</button>
-</main>
+</aside>
 </html>

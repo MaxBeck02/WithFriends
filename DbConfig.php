@@ -1,4 +1,5 @@
 <?php
+require_once 'DbConfig.php';
 class DbConfig{
     public function connect(){
         try{
