@@ -4,72 +4,55 @@ html {
     font-family: 'Noto Sans', sans-serif;
     overflow-x: hidden;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
 .logo {
-    position: relative;
-    width: 100px;
-    top: -30px;
+  position: relative;
+  width: 100px;
+  top: -25px;
 }
-
 .header a:hover {
-    position: relative;
-    padding: 20px;
-    top: 20px;
-    color: #48CAE4;
+  position: relative;;
+  color: #48CAE4;
 }
-
-.circle {
-    border-radius: 50%;
-    border: solid black 2px;
-    width: 50px;
-    object-position: 0px 5px;
-}
-
-.pfp {
-    float: right;
-}
-
 .header {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 10px;
-    height: 29px;
-    border-bottom: 2px solid black;
-    /* left: -10px; */
-    
-  }
-  
-  .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
-    border-radius: 4px;
-  }
-  
-  .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  .header a.active {
-    background-color: dodgerblue;
-    color: white;
-  }
-
+  position: relative;
+  overflow: hidden;
+  padding: 20px 10px;
+  height: 29px;
+  border-bottom: 2px solid black;
+}
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+.header-left {float: left;}
+.header-right {float: right;}
+@media screen and (max-width: 500px) {
   .header-left {
-      float: left;
+      display: none;
   }
-  
-  .header-right {
-    float: right;
-  }
-  
- 
-  @media screen and (max-width: 500px) {
-    .header-left {
-        display: none;
-    }
-  }
+}
+.circle {
+  border-radius: 50%;
+  border: solid black 2px;
+  width: 50px;
+  object-position: 0px 5px;
+}
+.pfp {float: right;}

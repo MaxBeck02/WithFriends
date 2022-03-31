@@ -8,72 +8,24 @@ html {
     margin: 0;
     padding: 0;
 }
-
-.lineFooter {
-    position: relative;
-    border-top: solid black 2px;
-    top: 30px;
-  
-}
-
-
+/* Header */
 .logo {
     position: relative;
     width: 100px;
     top: -25px;
 }
-
-
 .header a:hover {
     position: relative;;
     color: #48CAE4;
 }
-
-.circle {
-    border-radius: 50%;
-    border: solid black 2px;
-    width: 50px;
-    object-position: 0px 5px;
-}
-
-.pfp {
-    float: right;
-}
-
-.footer a{
-    text-decoration: none;
-     align-content: left;
-      color: black;
-      font-family: 'Noto Sans', sans-serif;
-  }
-  .footer {
-     position: fixed;
-     left: 0;
-     bottom: 0;
-     width: 100%;
-     background-color:  white;
-     text-align: left;
-  }
-  .footer li{
-    list-style: none;
-    float: left;
-    margin: 20px;
-  }
-  .footer a:hover {
-    position: relative;
-    color: #48CAE4;
-}
-  
 .header {
     position: relative;
     overflow: hidden;
     padding: 20px 10px;
     height: 29px;
     border-bottom: 2px solid black;
-    
-  }
-
-  .header a {
+}
+.header a {
     float: left;
     color: black;
     text-align: center;
@@ -82,28 +34,56 @@ html {
     font-size: 18px; 
     line-height: 25px;
     border-radius: 4px;
-  }
-  
-  .header a.logo {
+}
+.header a.logo {
     font-size: 25px;
     font-weight: bold;
-  }
-
-  .header a.active {
+}
+.header a.active {
     background-color: dodgerblue;
     color: white;
   }
-
-  .header-left {
-      float: left;
-  }
-
-  .header-right {
-    float: right;
-  }
-  
-  @media screen and (max-width: 500px) {
+.header-left {float: left;}
+.header-right {float: right;}
+@media screen and (max-width: 500px) {
     .header-left {
         display: none;
     }
-  }
+ }
+.circle {
+    border-radius: 50%;
+    border: solid black 2px;
+    width: 50px;
+    object-position: 0px 5px;
+}
+.pfp {float: right;}
+
+/* Footer */
+.footer a{
+    text-decoration: none;
+     align-content: left;
+      color: black;
+      font-family: 'Noto Sans', sans-serif;
+}
+.footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color:  white;
+     text-align: left;
+}
+.footer li{
+    list-style: none;
+    float: left;
+    margin: 20px;
+}
+.footer a:hover {
+    position: relative;
+    color: #48CAE4;
+}
+.lineFooter {
+    position: relative;
+    border-top: solid black 2px;
+    top: 30px;
+}
