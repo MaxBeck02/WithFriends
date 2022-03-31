@@ -8,6 +8,8 @@ html {
     position: relative;
     top: 50px;
     border-bottom: solid black 2px;
+    width: 2000px;
+    left: -10px;
 }
 .lineFooter {
     position: relative;
