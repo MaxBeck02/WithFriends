@@ -1,0 +1,27 @@
+/*body tag temporary*/ 
+body{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#box1 {
+  display: flex;
+  margin-top: 5%;
+  max-width: 70%;
+  max-height: 70%;
+  border: solid;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: ;
+  }
+
+#buttons{
+  display: inline-block;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  text-align: center;
+  border: none;
+}
+    
