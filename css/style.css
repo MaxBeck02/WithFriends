@@ -1,3 +1,8 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+html {
+    font-family: 'Noto Sans', sans-serif;
+}
 #nav li {
     list-style: none;
     float: left;
@@ -23,4 +28,8 @@
     padding: 20px;
     top: 20px;
     color: blue;
+}
+
+.slash:hover {
+    color: none;
 }
