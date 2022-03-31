@@ -1,0 +1,26 @@
+#nav li {
+    list-style: none;
+    float: left;
+    
+}
+#nav ul {
+    list-style: none;
+}
+
+.logo {
+    position: relative;
+    width: 100px;
+    top: -30px;
+}
+
+#nav a {
+    position: relative;
+    padding: 20px;
+    top: 20px;
+}
+#nav a:hover {
+    position: relative;
+    padding: 20px;
+    top: 20px;
+    color: blue;
+}
