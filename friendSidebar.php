@@ -77,6 +77,15 @@ float: left;
   margin: 4px 2px;
 }
 
+.pfpImage {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  float: left;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
 </style>
 <code>
 <!-- JavaScript When needed -->
@@ -103,7 +112,7 @@ $postIns = new User();
     <h1>Friends</h1>
     <p1>List</p1>
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn"><?php foreach($postIns->getFriend('123456') as $user){
+        <button class="dropbtn" ><img src='img/pfp.png' class="pfpImage" alt="profile image"><?php foreach($postIns->getFriend() as $user){
   echo $user->name;
 }?></button>
         <div class="dropdown-content">
@@ -111,19 +120,19 @@ $postIns = new User();
         </div>
     </div>
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Friend 2</button>
+        <button class="dropbtn"><img src='img/pfp.png' class="pfpImage" alt="profile image">Friend</button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
     </div>
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Friend 3</button>
+        <button class="dropbtn"><img src='img/pfp.png' class="pfpImage" alt="profile image">Friend</button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
     </div>
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Friend 4</button>
+        <button class="dropbtn"><img src='img/pfp.png' class="pfpImage" alt="profile image">Friend</button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
         </div>
