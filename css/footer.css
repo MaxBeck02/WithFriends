@@ -12,20 +12,15 @@
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color:  white;
+   background-color:  whitesmoke;
    text-align: left;
 }
 .footer li{
   list-style: none;
   float: left;
-  margin: 20px;
+  padding: 20px;
 }
 .footer a:hover {
   position: relative;
   color: #48CAE4;
-}
-.lineFooter {
-  position: relative;
-  border-top: solid black 2px;
-  top: 30px;
 }
