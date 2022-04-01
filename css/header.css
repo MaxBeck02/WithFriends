@@ -59,23 +59,6 @@ ul li:hover {
   transition: 0.3s;
 }
 
-#login,
-#signup {
-  border-radius: 5px;
-  padding: 5px 8px;
-}
-
-#login {
-  border: 1px solid #498afb;
-}
-
-#signup {
-  border: 1px solid #ff3860;
-}
-
-#signup a {
-  color: #ff3860;
-}
 .circle {
   position: relative;
   border-radius: 50%;
@@ -147,7 +130,7 @@ ul li:hover {
   margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 100px) and (max-width: 999px){
   header nav {
     display: none;
   }
@@ -155,4 +138,27 @@ ul li:hover {
   #hamburger-icon {
     display: block;
   }
+  #brand img {
+    font-weight: bold;
+    width: 200px;
+    display: flex;
+    align-items: center;
+  }
+  header {
+    padding: 0 20px;
+    background-color: whitesmoke;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
+    font-size: 50px;
+  }
+
 }
