@@ -29,6 +29,7 @@ header {
   width: 80px;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 #brand a {
