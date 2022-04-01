@@ -3,7 +3,7 @@ require_once 'DbConfig.php';
 class DbConfig{
     public function connect(){
         try{
-            $conn = new PDO("mysql:host=localhost;dbname=withfriends", 'root', '');
+            $conn = new PDO("mysql:host=38.242.233.110;port=3306;dbname=wfriends", 'marly', 'LeidenPlymouth1');
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }catch(PDOException $e){
