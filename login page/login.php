@@ -19,6 +19,7 @@ if (isset($_POST['login'])) {
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
 
+
   </head>
 
   <body>
@@ -35,7 +36,6 @@ if (isset($_POST['login'])) {
     <form action="?" method="POST">
       <div class="g-recaptcha" data-sitekey="6Le1HzYfAAAAAP9SdeuzJ7GDta-hWegd8lpABac1"></div>
       <br/>
-      <input type="submit" value="Submit">
     </form>
 
             </form>

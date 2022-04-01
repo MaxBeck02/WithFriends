@@ -18,7 +18,9 @@ body{
 }
 .box {
     width: 300px;
-    padding: 40px;
+    padding: 10px;
+    padding-left:40px;
+    padding-right:40px;
     border-radius: 50px;
     position: absolute;
     top: 50%;
@@ -32,7 +34,7 @@ body{
   color: black;
   font-weight: 500;
 }
-    .box input[type = "email"], .box input[type = "text"], .box input[type = "password"] {
+    .box input[type = "email"], .box input[type = "text"], .box input[type = "password"] ,.box input[type = "date"]{
         border: 0;
         background: #ADE8F4;
         display: block;
@@ -51,12 +53,11 @@ body{
         border-color: #90E0EF;
     }
 .box input[type = "submit"]{
-  border:0;
   background: none;
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid green;
+  border: 2px solid white;
   padding: 14px 40px;
   outline: none;
   color: black;
