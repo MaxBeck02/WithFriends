@@ -76,7 +76,25 @@ ul li:hover {
 #signup a {
   color: #ff3860;
 }
+.circle {
+  position: relative;
+  border-radius: 50%;
+  border: solid black 1px;
+  width: 5vh;
+  object-position: 0px 5px;
+  right: -5px;
+}
+#user li {
+  text-decoration: none;
+  list-style: none;
+  float: right;
+}
+#user {
+  position: relative;
+  right: 200px;
+  float: left;
 
+}
 #login a {
   color: #498afb;
 }
