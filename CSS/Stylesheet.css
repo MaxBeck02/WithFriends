@@ -30,4 +30,24 @@ body{
    border-radius: 10px;
  }
 
+#pfp {
+  display: flex;
+  margin-top: -10vw;
+  height: 10vw;
+  width: 10vw;
+}
+
+#pfp:hover {
+  background-image: url('./img/ChangePFP');
+  margin-top: -10vw;
+  height: 10vw;
+  width: 10vw;
+}
  
+#dubb{
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 5vw;
+}
+
+
