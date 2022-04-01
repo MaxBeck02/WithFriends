@@ -11,28 +11,28 @@ html {
 /* Header */
 .logo {
     position: relative;
-    width: 100px;
-    top: -25px;
+    width: 15vh;
+    top: -3.5vh;
 }
 .header a:hover {
-    position: relative;;
+    position: relative;
     color: #48CAE4;
 }
 .header {
     position: relative;
     overflow: hidden;
-    padding: 20px 10px;
-    height: 29px;
+    padding: 3vh 2.8vw;
+    height: 4.1vh;
     border-bottom: 2px solid black;
 }
 .header a {
     float: left;
     color: black;
     text-align: center;
-    padding: 12px;
+    padding: 1.5vh;
     text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
+    font-size: 2.5vh; 
+    line-height: 3.5vh;
     border-radius: 4px;
 }
 .header a.logo {
@@ -45,7 +45,7 @@ html {
   }
 .header-left {float: left;}
 .header-right {float: right;}
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1054px) {
     .header-left {
         display: none;
     }
@@ -53,7 +53,7 @@ html {
 .circle {
     border-radius: 50%;
     border: solid black 2px;
-    width: 50px;
+    width: 7vh;
     object-position: 0px 5px;
 }
 .pfp {float: right;}
