@@ -1,0 +1,120 @@
+<head>  
+  <title>Contact Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans';
+      font-size:large
+
+    }
+    
+    
+    header {
+      background-color: #03045e;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+    
+    
+    nav {
+      float: left;
+      width: 30%;
+      height: 600px; 
+      background: #90e0ef;
+      padding: 20px;
+      font-size: 28px;
+    }
+    
+    
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    article {
+      float: left;
+      padding: 20px;
+      width: 70%;
+      background-color: #ffffff;
+      height: 600px;      
+    }
+    
+    
+    p.para2{
+      text-align:right ;
+      text-indent: 600px;      
+    }
+
+    section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    
+    footer {
+      background-color: #03045e;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    
+    
+    @media (max-width: 600px) {
+      nav, article {
+        width: 100%;
+        height: auto;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    
+    
+    <header>
+      <h2>Header</h2>
+    </header>
+    
+    <section>
+      <nav>
+        <ul>
+          <h1> Contact information </h1>
+          <hr>
+          <p1> Email: mboRijnlandWithFriends@gmail.com </p1>
+          <hr>
+          <p1> Phone Number: 088 222 1777 </p1>
+          <hr>
+        </ul>
+      </nav>
+      
+      <article>
+        <h1> Submit a Question </h1>
+        
+        <form>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name"><br>
+
+          <label for="email">Contact Email</label><br>
+          <input type="text" id="email" email="email"><br>
+
+          <label for="question">What is your question?</label><br>
+          <input type="text" id="lname" name="lname">
+        </form>
+
+
+      </article>
+    </section>
+    
+    <footer>
+      <p>Footer</p>
+    </footer>
+    
+    </body>
+    </html>
