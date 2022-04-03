@@ -1,5 +1,5 @@
 <?php
-require_once '../backend/User.php';
+require_once 'classes/User.php';
 
 $user = new User();
 
@@ -18,13 +18,11 @@ if (isset($_POST['login'])) {
     <link rel="icon" type="image/x-icon" href="image/wfriendslogo.png">
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
-
-
   </head>
 
   <body>
             <form class="box" method="post">
-                <img class="logo" src="image/wfriendslogo.png" alt="Logo">
+                <img class="logo" src="images/With_friends_logo.png" alt="Logo">
                 <h1>Login</h1>
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>

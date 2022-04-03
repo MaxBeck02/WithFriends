@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/Stylesheet.css">
+    <link rel="stylesheet" href="./css/Stylesheet.css">
     <title>Setting page</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
         </div>
             <div id="dubb">
                 <a href="#"> <!--add href to file exploder-->
-                    <img src='./img/default-avatar.png' id="pfp" onmouseover="this.src='./img/ChangePFP.png';" onmouseout="this.src='./img/default-avatar.png';" />
+                    <img src='./images/default-avatar.png' id="pfp" onmouseover="this.src='./images/ChangePFP.png';" onmouseout="this.src='./images/default-avatar.png';" />
                 </a>
                 <button>Change name</button> <!--No submit location and no connection-->
             </div>  
