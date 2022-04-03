@@ -2,8 +2,7 @@
 <?php
 require_once 'DbConfig.php'; 
 
-class User extends DbConfig{
-
+class User extends DbConfig {
 
     public function create($data){
         try{
@@ -14,7 +13,7 @@ class User extends DbConfig{
             $encryptedPassword = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindParam(':username', $data['username']);
-            $stmt->bindParam('password', $encryptedPassword);
+            $stmt->bindParam(':password', $encryptedPassword);
             if(!$stmt->execute()){
                 throw new Exception("<p class='errorMessage'>Account could not be created. </p>");
             }
@@ -23,6 +22,7 @@ class User extends DbConfig{
             echo $e->getMessage();
         }
     }
+
     public function getUser($username){
         $sql = "SELECT * FROM users WHERE username = :username";
         $stmt = $this->connect()->prepare($sql);
