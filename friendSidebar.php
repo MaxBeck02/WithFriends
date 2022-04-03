@@ -87,10 +87,10 @@ float: left;
 </nav>
 <body>
 <?php
-require_once 'friends.php';
+require_once 'classes/Friend.php';
 
 
-$postIns = new User();
+$postIns = new Friend();
 // [{'id' => 1, 'title' => 'nfeubeu'}]
 // foreach($postIns->getUser() as $user){
 //   echo $user->friendCode . "<br>";

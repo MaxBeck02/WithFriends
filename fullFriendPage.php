@@ -87,8 +87,8 @@ float: left;
 </nav>
 <body>
 <?php
-require_once 'friends.php';
-$postIns = new User();
+require_once 'classes/Friend.php';
+$postIns = new Friend();
  ?>
 </body>
 <main>
