@@ -9,7 +9,8 @@ aside {
     float: right;
     background-color: #CAF0f8;
     height: 400px;
-    width: 200px;
+    width: 210px;
+    border-radius: 5%;
 }
 p1{
     font-size: 18px;
@@ -82,9 +83,8 @@ float: left;
   height: 15px;
   border-radius: 50%;
   float: left;
-  margin-top: 5px;
+  margin-top: 1px;
   margin-right: 5px;
-  margin-left: 5px;
 }
 </style>
 <code>
