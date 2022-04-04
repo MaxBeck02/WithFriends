@@ -6,6 +6,18 @@
         header('Location: login.php');
     }
 
+    if (isset($_POST['CN'])) {
+        $user->setUsername($_SESSION['username']);
+    }
+
+    if (isset($_POST['CEM'])) {
+        $user->setEmail($_SESSION['username']);
+    }
+
+    if (isset($_POST['CP'])) {
+        $user->ChangePassword($_SESSION['username'], $_POST['password'], $_POST['passwordConf']);
+    }
+    
     if (isset($_POST['delete'])) {
         $user->delete($_SESSION['username']);
     }
@@ -29,23 +41,37 @@
         <div id="dubb">
         <break>
 
-        <h3>Email adress</h3>
-            <input name="Change email address" placeholder="Change email address" maxlength="100" size="30">
-            <input type="submit" value="Submit">
-            <br></br>
+        <form method="POST">
+            <h3>Change Name</h3>
+                <input name="Change name" placeholder="Change name" maxlength="100" size="30">
+                <input type="submit" name="CN" value="Submit">
+        <form>
 
-        <h3>Phone number</h3>
-            <input name="Change phone number" placeholder="Change phone number" maxlength="100" size="30">
-            <input type="submit" value="Submit"> <!--No submit location and no connection-->
-            <br></br>
-            
-        <h3>Password</h3>
-            <input name="Change password" placeholder="Change password" maxlength="100" size="30">
-            <input type="submit" value="Submit"> <!--No submit location and no connection-->
-            <br></br>
-
-        <h5>Change user profile picture</h5>
         <br></br>
+
+        <form method="POST">
+            <h3>Email adress</h3>
+                <input name="Change email address" placeholder="Change email address" maxlength="100" size="30">
+                <input type="submit" name="CEM" value="Submit">
+        <form>
+            
+        <br></br>
+
+        <form method="POST">   
+            <h3>Password</h3>
+                <div id="passrow">
+                    <div id="passcoll">
+                        <input name="password" placeholder="Change password" maxlength="100" size="30">
+                        <input name="passwordConf" placeholder="Confirm password" maxlength="100" size="30">
+                        <input type="submit" name="CP" value="Submit">
+                    </div>
+                </div>
+        </form>
+        
+        <br></br>
+
+            <h5>Change user profile picture</h5>
+            <br></br>
 
         <form method="POST" id="buttons">
             <button>Disable account</button>
@@ -58,7 +84,6 @@
                 <a href="#"> <!--add href to file exploder-->
                     <img src='./images/default-avatar.png' id="pfp" onmouseover="this.src='./images/ChangePFP.png';" onmouseout="this.src='./images/default-avatar.png';" />
                 </a>
-                <button>Change name</button> <!--No submit location and no connection-->
             </div>
     </div>
 
