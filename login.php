@@ -1,9 +1,6 @@
 <?php
 $error = '';
-
-require_once 'classes/User.php';
-
-$user = new User();
+require_once 'partials/autoLoader.php';
 
 if (isset($_POST['login'])) {
     $error = $user->login($_POST['username'], $_POST['password'], $_POST['g-recaptcha-response']);

@@ -22,7 +22,7 @@ class User extends DbConfig
             }
             header("location: login.php");
         } catch (Exception $e) {
-            echo $e->getMessage();
+            return $e->getMessage();
         }
     }
 
