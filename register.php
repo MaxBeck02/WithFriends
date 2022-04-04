@@ -3,7 +3,7 @@ $error = '';
 require_once 'partials/autoLoader.php';
 
 if (isset($_POST['register'])) {
-    $error = $user->create($_POST['username'], $_POST['email'], $_POST['password'], $_POST['conf-password'], $_POST['dateOfBirth']);
+    $error = $user->create($_POST['username'], $_POST['email'], $_POST['password'], $_POST['conf-password'], $_POST['dateOfBirth'], $_POST['g-recaptcha-response']);
 }
 ?>
 

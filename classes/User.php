@@ -4,11 +4,22 @@ require_once 'DbConfig.php';
 class User extends DbConfig
 {
 
-    public function create($username, $email, $password, $confPassword, $birthDate)
+    public function create($username, $email, $password, $confPassword, $birthDate, $captchaResponse)
     {
         try {
+            $responseData = $this->checkReCaptcha($captchaResponse);
+            $users = $this->getUsers();
+
+            foreach ($users as $user) {
+                if ($user->name === $username || $user->email === $email) {
+                    throw new Exception("<p class='errorMessage'>Username or Email already taken. </p>");
+                }
+            }
             if ($password != $confPassword) {
                 throw new Exception("<p class='errorMessage'>Passwords do not match. </p>");
+            }
+            if (!isset($responseData->success) || !$responseData->success) {
+                throw new Exception("<p class='errorMessage'>Failed to complete reCaptcha. </p>");
             }
 
             $friendCode = $this->generateFriendCode();
@@ -49,10 +60,8 @@ class User extends DbConfig
     public function login($username, $password, $captchaResponse)
     {
         try {
-            $siteKey = '6LfBmkMfAAAAAIgZ_NfOh0H5wyhCQX8sHfVPFq_8';
-            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $siteKey . '&response=' . $captchaResponse);
-            $responseData = json_decode($verifyResponse);
             $user = $this->getUser($username);
+            $responseData = $this->checkReCaptcha($captchaResponse);
 
             if (!$user) {
                 throw new Exception("<p class='errorMessage'>User does not exist. </p>");
@@ -83,6 +92,12 @@ class User extends DbConfig
             }
             return $randNum;
         }
+    }
+
+    public function checkReCaptcha($captchaResponse) {
+        $siteKey = '6LfBmkMfAAAAAIgZ_NfOh0H5wyhCQX8sHfVPFq_8';
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $siteKey . '&response=' . $captchaResponse);
+        return json_decode($verifyResponse);
     }
 }
 
