@@ -29,5 +29,12 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
-    }
+
+        public function search(){
+            $query = "SELECT * FROM users like ".$_POST['term'];  // ? placeholder in query
+            $stmt = $this->mysqli->prepare($query);
+            $stmt->bind_param("s", "%$term%");       // insert your variable into the placeholder (still need to add % wildcards)
+            $stmt->execute();
+        } 
+}
 ?>

@@ -7,9 +7,9 @@ height: 8%;
 }
 aside {
     float: right;
-    background-color: #CAF0f8;
-    height: 400px;
-    width: 210px;
+    background-color: #00b4d8;
+    height: 450px;
+    width: 14%;
     border-radius: 5%;
 }
 p1{
@@ -19,10 +19,9 @@ p2{
     font-size: 14px;
 }
 .dropbtn {
-  background-color: #CAF0f8;
-  padding: 8px 75px;
-  font-size: 13px;
-  border: none;
+  background-color: #90e0ef;
+  padding: 12px 85px;
+  font-size: 10px;
 }
 
 .dropdown {
@@ -34,7 +33,7 @@ p2{
   display: none;
   position: absolute;
   right: 0;
-  background-color: #ADE8F4;
+  background-color: #90e0ef;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -50,14 +49,14 @@ p2{
 .dropdown:hover .dropbtn {background-color:#ADE8F4;}
 
 .friendList {
-	background-color:#CAF0f8;
-	border:1px solid #ADE8F4;
+	background-color:#90e0ef;
+	border:1px solid #90e0ef;
 	display:inline-block;
 	font-size:13px;
 	padding: 8px 75px;
 }
 .friendList:hover {
-	background-color:#ADE8F4;
+	background-color:#90e0ef;
 }
 .friendList:active {
     position:relative;
@@ -65,9 +64,13 @@ p2{
 }
 
 .friendSearch {
-width: 190px;
+width: 75%;
 height: 14px;
 float: left;
+background-color:#90e0ef;
+border-radius: 20%;
+margin-left: 20px;
+text-align: center;
 }
 
 .submitButton {
@@ -76,6 +79,8 @@ float: left;
   display: inline-block;
   font-size: 14px;
   margin: 4px 2px;
+  background-color: #90e0ef;
+  border-radius: 20%;
 }
 
 .pfpImage {
@@ -83,9 +88,14 @@ float: left;
   height: 15px;
   border-radius: 50%;
   float: left;
+  /*
   margin-top: 1px;
-  margin-right: 5px;
+  margin-bottom: 1px;
+  left: 95%;
+  margin-right: -5%;
+  */
 }
+
 </style>
 <code>
 <!-- JavaScript When needed -->
@@ -141,8 +151,10 @@ $postIns = new User();
     <p2>Friend Code: <?php foreach($postIns->getCode() as $user){
   echo $user->friendCode;
 }?></p2><br> <!-- Friend Code Should Be Pre-Generated On Account Creation? -->
-    <input class="friendSearch"type="text" placeholder="Search For Friends...">
+    <form action="search.php" method="POST">
+    <input class="friendSearch"type="text" placeholder="Search For Friends..." name="term">
     <br>
-    <button class="submitButton">Submit</button>
+    <input type="submit" name="submit" value="" class="submitButton">
+    </form>
 </aside>
 </html>
