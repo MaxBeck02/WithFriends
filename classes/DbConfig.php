@@ -1,6 +1,7 @@
 <?php
-require_once 'DbConfig.php';
-class DbConfig{
+
+class DbConfig {
+
     public function connect(){
         try{
             $conn = new PDO("mysql:host=38.242.233.110;port=3306;dbname=wfriends", 'marly', 'LeidenPlymouth1');
@@ -10,5 +11,7 @@ class DbConfig{
             echo $e->getMessage();
         }
     }
+
 }
+
 ?>

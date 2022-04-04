@@ -1,7 +1,7 @@
 <?php
     require_once 'DbConfig.php';
 
-    class User extends DbConfig{
+    class Friend extends DbConfig{
         //fetch(PDO::OBJ)
         //fetchAll(PDO::FETCH_OBJ)
 
