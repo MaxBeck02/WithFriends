@@ -1,10 +1,12 @@
 <?php
+$error = '';
+
 require_once 'classes/User.php';
 
 $user = new User();
 
 if (isset($_POST['login'])) {
-    echo $user->login($_POST['username'], $_POST['password']);
+    $error = $user->login($_POST['username'], $_POST['password'], $_POST['g-recaptcha-response']);
 }
 ?>
 
@@ -27,13 +29,13 @@ if (isset($_POST['login'])) {
     <input type="password" name="password" placeholder="Password" required>
     <input type="submit" name="login" value="Login">
     <input type="hidden" name="token_generate" id="token_generate">
+
+    <?php echo $error ?>
     <p class="login">
         New? <a href="register.php">Click here to register.</a>
     </p>
-    <form action="?" method="POST" class="captcha">
-        <div class="g-recaptcha" data-sitekey="6Le1HzYfAAAAAP9SdeuzJ7GDta-hWegd8lpABac1"></div>
-        <br/>
-    </form>
+
+    <div class="g-recaptcha" data-sitekey="6LfBmkMfAAAAAJBOY5QZx-oNIzz6hQ6PEQ_ttnM0"></div>
 </form>
 
 </body>

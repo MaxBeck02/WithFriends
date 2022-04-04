@@ -75,6 +75,7 @@ body{
 
 
 .login{
+    margin-top: 10px;
   color: white;
 }
 
@@ -87,10 +88,9 @@ body{
   color: red;
 }
 .errorMessage {
-    color: red;
+    color: red !important;
     width: 300px;
-    margin: auto;
-    border: 4px solid red;
+    font-weight: bold;
 }
 
 .g-recaptcha {
