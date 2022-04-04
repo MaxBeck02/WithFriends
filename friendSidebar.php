@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <style>
-nav {
-background-color: #CAF0f8;
-height: 8%;
-}
+
 aside {
+    text-align: center;
     float: right;
     background-color: #00b4d8;
-    height: 450px;
+    height: 600px;
     width: 14%;
     border-radius: 5%;
 }
@@ -20,9 +18,13 @@ p2{
 }
 .dropbtn {
   background-color: #90e0ef;
-  padding: 12px 85px;
+  /* padding: 12px 85px; */
   font-size: 10px;
+  text-align: center;
+  width: 14vw;
+  height: 8vh;
 }
+.dropbtn
 
 .dropdown {
   position: relative;
@@ -65,7 +67,7 @@ p2{
 
 .friendSearch {
 width: 75%;
-height: 14px;
+height: 20px;
 float: left;
 background-color:#90e0ef;
 border-radius: 20%;
@@ -84,10 +86,14 @@ text-align: center;
 }
 
 .pfpImage {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
   float: left;
+  position: absolute;
+  left: 88%;
+  margin-top: -1vh;
+
   /*
   margin-top: 1px;
   margin-bottom: 1px;
@@ -101,12 +107,13 @@ text-align: center;
 <!-- JavaScript When needed -->
 </code>
 <title> W/ Friends | Friends </title>
-<nav>
-    <h1>NAV</h1>
-</nav>
 <body>
 <?php
 require_once 'classes/Friend.php';
+require_once 'classes/User.php';
+include('indexx.html');
+
+$userClass = new User();
 
 
 $postIns = new Friend();
@@ -120,33 +127,7 @@ $postIns = new Friend();
 <aside>
     <!-- Main Focus Managing Friends Sidebar -->
     <h1>Friends</h1>
-    <p1>List</p1>
-    <div class="dropdown" style="float:right;">
-        <button class="dropbtn" ><img src='img/pfp.png' class="pfpImage" alt="profile image"><?php foreach($postIns->getFriend() as $user){
-  echo $user->name;
-}?></button>
-        <div class="dropdown-content">
-          <button class="friendList">Remove Friend</button>
-        </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-        <button class="dropbtn"><img src='img/pfp.png' class="pfpImage" alt="profile image">Friend</button>
-        <div class="dropdown-content">
-          <button class="friendList">Remove Friend</button>
-        </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-        <button class="dropbtn"><img src='img/pfp.png' class="pfpImage" alt="profile image">Friend</button>
-        <div class="dropdown-content">
-          <button class="friendList">Remove Friend</button>
-        </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-        <button class="dropbtn"><img src='img/pfp.png' class="pfpImage" alt="profile image">Friend</button>
-        <div class="dropdown-content">
-          <button class="friendList">Remove Friend</button>
-        </div>
-    </div></br>
+    
     <p1>Add</p1><br>
     <p2>Friend Code: <?php foreach($postIns->getCode() as $user){
   echo $user->friendCode;
@@ -156,5 +137,19 @@ $postIns = new Friend();
     <br>
     <input type="submit" name="submit" value="" class="submitButton">
     </form>
+
+    <p1>List</p1><br>
+<?php foreach($userClass->getUsers() as $user) {?>
+    <div class="dropdown" style="float:right;">
+        <button class="dropbtn" ><img src="./img/<?php echo $user->profilepic;?>" class="pfpImage">
+         <?php echo $user->name;?>
+        </button>
+        <div class="dropdown-content">
+          <button class="friendList">Remove Friend</button>
+        </div>
+    </div>
+  <?php } ?>
+    </div></br>
+ 
 </aside>
 </html>

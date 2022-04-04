@@ -8,13 +8,11 @@
 </head>
 <body>
     <?php 
-        require_once "friends.php";
+        require_once 'classes/Friend.php';
 
-        $postIns = new User();
+        $postIns = new Friend();
 
-         foreach($postIns->search() as $user){
-            echo $user->name;
-          }
+        $postIns->Search($_POST['term']);
     ?>
 </body>
 </html>

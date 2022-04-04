@@ -17,8 +17,13 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
+
         public function getFriend(){
-            $sql = "SELECT * FROM users LIMIT 1";
+            $i = 0;
+            while($i <= 3){
+                $i++;
+            }
+            $sql = "SELECT * FROM users LIMIT $i";
             $stmt= $this->connect()->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -29,12 +34,17 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
-
         public function search(){
-            $query = "SELECT * FROM users like ".$_POST['term'];  // ? placeholder in query
-            $stmt = $this->mysqli->prepare($query);
+            $sql = "SELECT userID FROM users LIKE ?";  // ? placeholder in query
+            $stmt = $this->connect()->prepare($sql);
             $stmt->bind_param("s", "%$term%");       // insert your variable into the placeholder (still need to add % wildcards)
             $stmt->execute();
         } 
+        public function limit($i){
+            $i = 1;
+            if($i <= 4){
+                $i++;
+            }
+        }
 }
 ?>
