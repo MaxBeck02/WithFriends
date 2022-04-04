@@ -1,7 +1,14 @@
 <?php
-    require_once './partials/footer.html';
-    require_once './partials/header.html';
-    require_once './classes/DbConfig.php'; 
+    require_once 'partials/autoLoader.php';
+    session_start();
+
+    if (!isset($_SESSION['loggedIn'])) {
+        header('Location: login.php');
+    }
+
+    if (isset($_POST['delete'])) {
+        $user->delete($_SESSION['username']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +23,8 @@
     <title>Setting page</title>
 </head>
 <body>
+<?php require_once 'partials/header.html'?>
+
     <div id="box1">
         <div id="dubb">
         <break>
@@ -38,20 +47,23 @@
         <h5>Change user profile picture</h5>
         <br></br>
 
-        <div id="buttons">
+        <form method="POST" id="buttons">
             <button>Disable account</button>
             <!-- code for acc disable-->
-            <button>Delete Account</button>
+            <input type="submit" name="delete" value="Delete account">
             <!--code for acc delete -->
-        </div>
+        </form>
         </div>
             <div id="dubb">
                 <a href="#"> <!--add href to file exploder-->
                     <img src='./images/default-avatar.png' id="pfp" onmouseover="this.src='./images/ChangePFP.png';" onmouseout="this.src='./images/default-avatar.png';" />
                 </a>
                 <button>Change name</button> <!--No submit location and no connection-->
-            </div>  
-    </div> 
+            </div>
+    </div>
+
+
+<?php require_once 'partials/footer.html'?>
 
 </body>
 </html>

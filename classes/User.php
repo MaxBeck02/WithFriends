@@ -3,7 +3,6 @@ require_once 'DbConfig.php';
 
 class User extends DbConfig
 {
-
     public function create($username, $email, $password, $confPassword, $birthDate, $captchaResponse)
     {
         try {
@@ -38,6 +37,14 @@ class User extends DbConfig
         } catch (Exception $e) {
             return $e->getMessage();
         }
+    }
+
+    public function delete($username) {
+        $sql = 'DELETE FROM users WHERE name = :username;';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":username", $username);
+        $stmt->execute();
+        header('Location: login.php');
     }
 
     public function getUser($username)
@@ -75,8 +82,8 @@ class User extends DbConfig
 
             session_start();
             $_SESSION['loggedIn'] = true;
-            $_SESSION['username'] = $user->username;
-            header("Location: index.html");
+            $_SESSION['username'] = $username;
+            header("Location: Setting-page.php");
         } catch (Exception $e) {
             return $e->getMessage();
         }
