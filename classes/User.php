@@ -10,13 +10,16 @@ class User extends DbConfig
             if ($password != $confPassword) {
                 throw new Exception("<p class='errorMessage'>Passwords do not match. </p>");
             }
-            $sql = "INSERT INTO users (name, email, password, dateOfBirth) VALUES (:username, :email, :password, :dateOfBirth)";
+
+            $friendCode = $this->generateFriendCode();
+            $sql = "INSERT INTO users (name, email, password, dateOfBirth, friendCode) VALUES (:username, :email, :password, :dateOfBirth, :friendcode)";
             $encryptedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $encryptedPassword);
             $stmt->bindParam(':dateOfBirth', $birthDate);
+            $stmt->bindParam(':friendcode', $friendCode);
             if (!$stmt->execute()) {
                 throw new Exception("<p class='errorMessage'>Account could not be created. </p>");
             }
@@ -67,6 +70,18 @@ class User extends DbConfig
             header("Location: index.html");
         } catch (Exception $e) {
             return $e->getMessage();
+        }
+    }
+
+    public function generateFriendCode() {
+        $users = $this->getUsers();
+        $randNum = rand(100000,999999);
+
+        foreach($users as $user) {
+            if($randNum === $user->friendCode) {
+                $this->generateFriendCode();
+            }
+            return $randNum;
         }
     }
 }
