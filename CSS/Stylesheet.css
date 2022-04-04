@@ -1,53 +1,107 @@
-/*body tag temporary*/ 
-body{
-  font-family:Arial, Helvetica, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 #box1 {
   display: flex;
-  margin-top: 5%;
+  margin-top: 2%;
   max-width: 70%;
   max-height: 70%;
-  border: solid;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: #0077B6;
+  border: 3px #ADE8F4 solid;
+  padding: 50px;
   }
 
-#buttons{
-  display: inline-block;
-  flex-direction: row;
-  justify-content: center;
-  padding: 2vw;
-}
+@media screen and (min-width: 1200px){ /*Desktop*/
+  #dubb{
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5vw;
+  }
+  
+  button{
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    width: 8vw;
+    height: 2vw;
+  }
 
- button{
-   border: none;
-   text-align: center;
-   height: auto;
-   padding: 15px 32px;
-   border-radius: 10px;
- }
-
-#pfp {
-  display: flex;
-  margin-top: -10vw;
-  height: 10vw;
-  width: 10vw;
-}
-
-#pfp:hover {
-  background-image: url('./img/ChangePFP');
-  margin-top: -10vw;
-  height: 10vw;
-  width: 10vw;
-}
+  #buttons{
+    display: inline-block;
+    flex-direction: row;
+  }
+    
+  #pfp {
+    display: flex;
+    margin-top: -2vw;
+    height: 8vw;
+    width: 8vw;
+  }
  
-#dubb{
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 5vw;
+  #pfp:hover {
+    background-image: url('./img/ChangePFP');
+    margin-top: -2vw;
+    height: 8vw;
+    width: 8vw;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width:1199px){ /*Tablet*/
+  #dubb{
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5vw;
+  }
+  
+  button{
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    width: 12vw;
+    height: 3vw;
+  }
+
+  #buttons{
+    display: inline-block;
+    flex-direction: row;
+  }
+
+  #pfp {
+    display: flex;
+    margin-top: -10vw;
+    height: 10vw;
+    width: 10vw;
+  } 
 }
 
 
+@media screen and (min-width: 100px) and (max-width:767.9px){ /*Telefoon*/
+  #dubb{
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 1.3vw;
+  }
+  
+  button{
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    width: 14vw;
+    height: 10vw;
+  }
+
+  #buttons{
+    display: inline-block;
+    flex-direction: row;
+  }
+
+  #pfp {
+    display: flex;
+    margin-top: -10vw;
+    height: 10vw;
+    width: 10vw;
+  }
+}
