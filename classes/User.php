@@ -40,7 +40,7 @@ class User extends DbConfig
     }
 
     public function delete($username) {
-        $sql = 'DELETE FROM users WHERE name = :username;';
+        $sql = "DELETE FROM users WHERE name = :username;";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindParam(":username", $username);
         $stmt->execute();
@@ -62,6 +62,39 @@ class User extends DbConfig
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function setUsername($username, $newUsername) {
+        $sql = "UPDATE users SET name = :newUsername WHERE name = :username;";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":newUsername", $newUsername);
+        $stmt->execute();
+    }
+
+    public function setEmail($username, $newEmail) {
+        $sql = "UPDATE users SET email = :newEmail WHERE name = :username;";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":newEmail", $newEmail);
+        $stmt->execute();
+    }
+
+    public function changePassword($username, $password, $confPassword) {
+        try {
+            if ($password != $confPassword) {
+                throw new Exception("<p class='errorMessage'>Passwords do not match. </p>");
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
+        $encryptedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+        $sql = "UPDATE users SET password = :newPassword WHERE name = :username;";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":newPassword", $encryptedPassword);
+        $stmt->execute();
     }
 
     public function login($username, $password, $captchaResponse)
