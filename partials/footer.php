@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="./CSS/footer.css">
 </head>
 <body>
 
