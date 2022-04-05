@@ -1,4 +1,5 @@
 <?php
+    $error = '';
     require_once 'partials/autoLoader.php';
     session_start();
 
@@ -6,20 +7,22 @@
         header('Location: login.php');
     }
 
+    $curUser = $user->getUserById($_SESSION['userID']);
+
     if (isset($_POST['CN'])) {
-        $user->setUsername($_SESSION['username']);
+        $user->setUsername($_SESSION['userID'], $_POST['name']);
     }
 
     if (isset($_POST['CEM'])) {
-        $user->setEmail($_SESSION['username']);
+        $user->setEmail($_SESSION['userID'], $_POST['email']);
     }
 
     if (isset($_POST['CP'])) {
-        $user->ChangePassword($_SESSION['username'], $_POST['password'], $_POST['passwordConf']);
+        $error = $user->ChangePassword($_SESSION['userID'], $_POST['password'], $_POST['passwordConf']);
     }
     
     if (isset($_POST['delete'])) {
-        $user->delete($_SESSION['username']);
+        $user->delete($_SESSION['userID']);
     }
 ?>
 
@@ -43,7 +46,7 @@
 
         <form method="POST">
             <h3>Change Name</h3>
-                <input name="Change name" placeholder="Change name" maxlength="100" size="30">
+                <input type="text" name="name" placeholder="Change name" maxlength="100" size="30" value="<?= $curUser->name ?>">
                 <input type="submit" name="CN" value="Submit">
         <form>
 
@@ -51,7 +54,7 @@
 
         <form method="POST">
             <h3>Email adress</h3>
-                <input name="Change email address" placeholder="Change email address" maxlength="100" size="30">
+                <input type="email" name="email" placeholder="Change email address" maxlength="100" size="30" value="<?= $curUser->email ?>">
                 <input type="submit" name="CEM" value="Submit">
         <form>
             
@@ -59,13 +62,14 @@
 
         <form method="POST">   
             <h3>Password</h3>
-                <div id="passrow">
+                <div id="passrow" style="margin-bottom: 10px">
                     <div id="passcoll">
-                        <input name="password" placeholder="Change password" maxlength="100" size="30">
-                        <input name="passwordConf" placeholder="Confirm password" maxlength="100" size="30">
+                        <input type="password" name="password" placeholder="Change password" maxlength="100" size="30">
+                        <input type="password" name="passwordConf" placeholder="Confirm password" maxlength="100" size="30">
                         <input type="submit" name="CP" value="Submit">
                     </div>
                 </div>
+            <?= $error ?>
         </form>
         
         <br></br>

@@ -39,12 +39,21 @@ class User extends DbConfig
         }
     }
 
-    public function delete($username) {
-        $sql = "DELETE FROM users WHERE name = :username;";
+    public function delete($id) {
+        $sql = "DELETE FROM users WHERE userID = :id;";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":id", $id);
         $stmt->execute();
         header('Location: login.php');
+    }
+
+    public function getUserById($id)
+    {
+        $sql = "SELECT * FROM users WHERE userID = :id";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
     public function getUser($username)
@@ -64,23 +73,23 @@ class User extends DbConfig
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function setUsername($username, $newUsername) {
-        $sql = "UPDATE users SET name = :newUsername WHERE name = :username;";
+    public function setUsername($id, $newUsername) {
+        $sql = "UPDATE users SET name = :newUsername WHERE userID = :id;";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":id", $id);
         $stmt->bindParam(":newUsername", $newUsername);
         $stmt->execute();
     }
 
-    public function setEmail($username, $newEmail) {
-        $sql = "UPDATE users SET email = :newEmail WHERE name = :username;";
+    public function setEmail($id, $newEmail) {
+        $sql = "UPDATE users SET email = :newEmail WHERE userID = :id;";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":id", $id);
         $stmt->bindParam(":newEmail", $newEmail);
         $stmt->execute();
     }
 
-    public function changePassword($username, $password, $confPassword) {
+    public function changePassword($id, $password, $confPassword) {
         try {
             if ($password != $confPassword) {
                 throw new Exception("<p class='errorMessage'>Passwords do not match. </p>");
@@ -90,9 +99,9 @@ class User extends DbConfig
         }
 
         $encryptedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
-        $sql = "UPDATE users SET password = :newPassword WHERE name = :username;";
+        $sql = "UPDATE users SET password = :newPassword WHERE userID = :id;";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":id", $id);
         $stmt->bindParam(":newPassword", $encryptedPassword);
         $stmt->execute();
     }
@@ -115,7 +124,7 @@ class User extends DbConfig
 
             session_start();
             $_SESSION['loggedIn'] = true;
-            $_SESSION['username'] = $username;
+            $_SESSION['userID'] = $user->userID;
             header("Location: Setting-page.php");
         } catch (Exception $e) {
             return $e->getMessage();
