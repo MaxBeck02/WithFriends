@@ -45,6 +45,7 @@ p2{
   padding: 8px 75px;
   text-decoration: none;
   display: block;
+  width: 8vh;
 }
 .dropdown-content a:hover {background-color: #ADE8F4;}
 .dropdown:hover .dropdown-content {display: block;}
@@ -56,6 +57,7 @@ p2{
 	display:inline-block;
 	font-size:13px;
 	padding: 8px 75px;
+  width: 30vh;
 }
 .friendList:hover {
 	background-color:#90e0ef;
@@ -65,7 +67,7 @@ p2{
 	top:1px;
 }
 
-.friendSearch {
+.search-input {
 width: 75%;
 height: 20px;
 float: left;
@@ -75,7 +77,7 @@ margin-left: 20px;
 text-align: center;
 }
 
-.submitButton {
+.search-btn {
   padding: 8px 75px;
   text-align: center;
   display: inline-block;
@@ -132,11 +134,37 @@ $postIns = new Friend();
     <p2>Friend Code: <?php foreach($postIns->getCode() as $user){
   echo $user->friendCode;
 }?></p2><br> <!-- Friend Code Should Be Pre-Generated On Account Creation? -->
-    <form action="search.php" method="POST">
-    <input class="friendSearch"type="text" placeholder="Search For Friends..." name="term">
-    <br>
-    <input type="submit" name="submit" value="" class="submitButton">
-    </form>
+     <section class="test">
+    <section id="search-box">
+      <form class="item-search-box" method="POST" action="#">
+        <input class="search-input" type="text" name="search" placeholder="Search by friend code.." ></br>
+        <button class="search-btn" type="submit" name="submit-search" value="Zoeken"><i class="fas fa-search"></i>Search</button>
+      </form>
+    </section>
+  </section>
+  <?php
+    require_once 'classes/Friend.php';
+    $serieIns = new Friend();
+    $zoek = new Friend();
+
+    if(isset($_POST["submit-search"])) {
+      // foreach($zoek->search($_POST['search']) as $friends){
+      //   echo $friends;
+      // }
+    }
+?>
+  <section id="fotos">
+            <section id="flex">
+                <?php if(isset($_POST["submit-search"])) {
+                  foreach($zoek->search($_POST['search']) as $friend){?>
+                    <article>
+                        <a href="#" style="color: white;">
+                        <p><?php echo $friend->name; ?></p>
+                        </a>
+                    </article>
+                <?php } }?>
+            </section>
+  </section>
 
     <p1>List</p1><br>
 <?php foreach($userClass->getUsers() as $user) {?>

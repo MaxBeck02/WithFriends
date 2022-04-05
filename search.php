@@ -10,9 +10,33 @@
     <?php 
         require_once 'classes/Friend.php';
 
-        $postIns = new Friend();
+        // $postIns = new Friend();
 
-        $postIns->Search($_POST['term']);
+        // $postIns->Search($_POST['term']);
+        
+        // $button = $_GET ['submit'];
+        // $search = $_GET ['search'];
+
+        // $con=mysqli_connect("localhost", "root", "", "wfriends" );
+
+        // $sql="SELECT * FROM users WHERE MATCH(name, userID) AGAINST ('%" . $search . "%')";
+
+        // $run = mysqli_query($con,$sql);
+        // $foundnum = mysqli_num_rows($run);
+
+        // if($foundnum==0){
+        //     echo "We cannot find the item you searched: '<b>$search</b>'.";
+        // } else {
+        //     echo "<h1><h2> $foundnum Results Found for \"". $search ."\"</strong></h1>";
+        //     $getquery = mysqli_query($con, $sql);
+
+        //     while($runrows = mysqli_fetch_array($getquery)){
+        //         $buylink = $runrows['name'];
+        //         $imagelink = $runrows['userID'];
+
+        //         echo"<h5 class='card-title'>".$runrows['name'] ."</h5>";
+        //     }
+        // }
     ?>
 </body>
 </html>
