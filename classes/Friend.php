@@ -1,6 +1,6 @@
 <?php
     require_once 'DbConfig.php';
-
+    
     class Friend extends DbConfig{
         //fetch(PDO::OBJ)
         //fetchAll(PDO::FETCH_OBJ)
@@ -12,7 +12,7 @@
         //     return $stmt->fetchAll(PDO::FETCH_OBJ);
         // }
         public function getCode(){
-            $sql = "SELECT friendCode FROM users WHERE name = 'Kenan'";
+            $sql = "SELECT friendCode FROM users WHERE userID = '". $_SESSION['userID'] . "'";
             $stmt= $this->connect()->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);

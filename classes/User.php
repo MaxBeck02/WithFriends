@@ -148,6 +148,12 @@ class User extends DbConfig
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $siteKey . '&response=' . $captchaResponse);
         return json_decode($verifyResponse);
     }
+    public function getFriends(){
+        $sql = "SELECT * FROM users INNER JOIN friends ON friends.userID ='". $_SESSION['userID'] . "' WHERE friends.friendID = users.userID;";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ); 
+    }
 }
 
 ?>

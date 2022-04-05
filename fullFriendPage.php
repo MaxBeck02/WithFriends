@@ -107,7 +107,7 @@ background: #ADE8F4;
 <!-- JavaScript When needed -->
 </code>
 <title> W/ Friends | Friends </title>
-<?php include('indexx.html'); 
+<?php include('index.html'); 
 require_once 'classes/User.php';
 require_once 'classes/Friend.php';
 $postIns = new Friend();
@@ -162,6 +162,7 @@ $userClass = new User();
          <?php echo $user->name;?>
         </button>
         <div class="dropdown-content">
+          <button class="friendList" href="#">Message</button>
           <button class="friendList">Remove Friend</button>
         </div>
     </div>

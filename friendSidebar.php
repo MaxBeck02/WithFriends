@@ -1,3 +1,14 @@
+<?php
+require_once 'partials/autoLoader.php';
+session_start();
+
+if (!isset($_SESSION['loggedIn'])) {
+    header('Location: login.php');
+}
+
+$_SESSION["userID"];
+?>
+
 <!DOCTYPE html>
 <html>
 <style>
@@ -113,12 +124,7 @@ text-align: center;
 <?php
 require_once 'classes/Friend.php';
 require_once 'classes/User.php';
-include('indexx.html');
-
-$userClass = new User();
-
-
-$postIns = new Friend();
+include('index.html');
 // [{'id' => 1, 'title' => 'nfeubeu'}]
 // foreach($postIns->getUser() as $user){
 //   echo $user->friendCode . "<br>";
@@ -131,8 +137,8 @@ $postIns = new Friend();
     <h1>Friends</h1>
     
     <p1>Add</p1><br>
-    <p2>Friend Code: <?php foreach($postIns->getCode() as $user){
-  echo $user->friendCode;
+    <p2>Friend Code: <?php foreach($friend->getCode() as $userIns){
+  echo $userIns->friendCode;
 }?></p2><br> <!-- Friend Code Should Be Pre-Generated On Account Creation? -->
      <section class="test">
     <section id="search-box">
@@ -167,10 +173,10 @@ $postIns = new Friend();
   </section>
 
     <p1>List</p1><br>
-<?php foreach($userClass->getUsers() as $user) {?>
+<?php foreach($user->getFriends() as $userIns) {?>
     <div class="dropdown" style="float:right;">
-        <button class="dropbtn" ><img src="./img/<?php echo $user->profilepic;?>" class="pfpImage">
-         <?php echo $user->name;?>
+        <button class="dropbtn" ><img src="./img/<?php echo $userIns->profilepic;?>" class="pfpImage">
+         <?php echo $userIns->name;?>
         </button>
         <div class="dropdown-content">
           <button class="friendList">Remove Friend</button>
