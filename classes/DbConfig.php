@@ -10,8 +10,15 @@ class DbConfig {
         }catch(PDOException $e){
             echo $e->getMessage();
         }
-    }
+     }
+    // public function insertLocation(lat, long){
+    //     //db connecten 
+    //     $sql = "INSERT INTO users (latitude) VALUES ('$lat')";
 
+    //     $sql = "INSERT INTO users (Longitude) VALUES ('$long')";
+    // }
 }
+// $db = new DbConfig();
+// $db->insertLocation($_POST['lat'], ['long']);
 
 ?>
