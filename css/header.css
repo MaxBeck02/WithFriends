@@ -64,10 +64,11 @@ ul li:hover {
   position: relative;
   border-radius: 50%;
   border: solid black 1px;
-  width: 5vh;
+  width: 2vw;
   object-position: 0px 5px;
   right: -5px;
-}
+  height: 4vh;
+ }
 #user li {
   text-decoration: none;
   list-style: none;
