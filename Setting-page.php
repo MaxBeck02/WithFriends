@@ -40,6 +40,7 @@
 <body>
 <?php require_once 'partials/header.html'?>
 
+<main>
     <div id="box1">
         <div id="dubb">
         <break>
@@ -90,7 +91,7 @@
                 </a>
             </div>
     </div>
-
+</main>
 
 <?php require_once 'partials/footer.html'?>
 
