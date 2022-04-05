@@ -162,7 +162,7 @@ include('index.html');
   <section id="fotos">
             <section id="flex">
                 <?php if(isset($_POST["submit-search"])) {
-                  foreach($zoek->search($_POST['search']) as $friend){?>
+                  foreach($zoek->addFriend($_POST['search']) as $friend){?>
                     <article>
                         <a href="#" style="color: white;">
                         <p><?php echo $friend->name; ?></p>

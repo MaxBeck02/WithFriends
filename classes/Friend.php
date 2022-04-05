@@ -45,6 +45,23 @@
             return $stmt->fetchAll(PDO::FETCH_OBJ);
             
             }
+
+            public function addFriend($friendID){
+                $term = $term.'%';
+            
+                $sql = "INSERT INTO friends (userID, friendID) VALUES (:userid, :friendid) WHERE friendCode = :term";
+                
+                $stmt = $this->connect()->prepare($sql);
+                
+                $stmt->bindParam(":userid", $_SESSION['userID']);
+                $stmt->bindParam(":friendid", $friendID);
+
+                $stmt->execute();
+                
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+                
+            }
+
         public function limit($i){
             $i = 1;
             if($i <= 4){
