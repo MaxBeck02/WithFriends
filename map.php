@@ -1,11 +1,3 @@
-<?php
-include 'partials/autoloader.php';
-
-if(isset($_GET['lat'])) {
-    $user->setLocation($_SESSION['userID'], $_GET['long'], $_GET['lat']);
-}
-
-?>
 
 <html>
 <body>
@@ -36,7 +28,7 @@ function update_content(){
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition();
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -47,8 +39,12 @@ function showPosition(position) {
     //          console.log(response);
     //      });
 
-    window.location.replace("http://localhost/phples/Project%20periode%204/WithFriends/map.php?lat="+position.coords.latitude+"&long="+position.coords.longitude);
-
+    $.post("storeLocation.php",
+  {
+    long: position.coords.longitude,
+    lat: position.coords.latitude
+  })
+    
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }

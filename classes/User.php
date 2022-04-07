@@ -125,7 +125,7 @@ class User extends DbConfig
             session_start();
             $_SESSION['loggedIn'] = true;
             $_SESSION['userID'] = $user->userID;
-            header("Location: Setting-page.php");
+            header("Location: map.php");
         } catch (Exception $e) {
             return $e->getMessage();
         }
@@ -151,10 +151,10 @@ class User extends DbConfig
 
     public function setLocation($userID, $long, $lat) {
         $sql = "UPDATE users SET longitude = :long, latitude = :lat WHERE userID = :userID";
+        $stmt = $this->connect()->prepare($sql);
         $stmt->bindParam(":userID", $userID);
         $stmt->bindParam(":long", $long);
         $stmt->bindParam(":lat", $lat);
-        $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
     }
     
